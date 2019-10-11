@@ -1,38 +1,44 @@
 @import "./../css/normalize.css";
 
-$loopuiPrimary: #2e5eff;
-$loopuiPrimaryDark: #0035cb;
-$loopuiPrimaryLight: #798bff;
+$loopui-primary: #2e5eff;
+$loopui-primary-dark: #0035cb;
+$loopui-primary-light: #798bff;
 
-$loopuiSecondary: #02195d;
-$loopuiSecondaryDark: #000033;
-$loopuiSecondaryLight: #3e3f8b;
+$loopui-secondary: #02195d;
+$loopui-secondary-dark: #000033;
+$loopui-secondary-light: #3e3f8b;
 
-$loopuiPink: #ff6867;
-$loopuiPinkDark: #ff3a3d;
-$loopuiPinkLight: #ff9492;
+$loopui-pink: #ff6867;
+$loopui-pink-dark: #ff3a3d;
+$loopui-pink-light: #ff9492;
 
-$loopuiYellow: #fbd800;
-$loopuiYellowDark: #fbc100;
-$loopuiYellowLight: #f6e800;
+$loopui-yellow: #fbd800;
+$loopui-yellow-dark: #fbc100;
+$loopui-yellow-light: #f6e800;
 
-$loopuiBlack: $loopuiSecondary;
-$loopuiDarkGray: #96a5b2;
-$loopuiMediumGray: #cbd6e1;
-$loopuiLightGray: #ecf5fc;
+$loopui-black: $loopui-secondary;
+$loopui-dark-gray: #96a5b2;
+$loopui-medium-gray: #cbd6e1;
+$loopui-light-gray: #ecf5fc;
+
+/* Responsive Breakpoints */
+
+$break-desktop: 1300px;
+$break-tablet: 1024px;
+$break-phone: 768px;
 
 html {
   body {
     background-color: #fff;
     font-family: "proxima-nova", Arial, Helvetica, sans-serif;
-    color: $loopuiBlack;
+    color: $loopui-black;
     font-size: 14px;
     line-height: 1.2;
   }
 }
 
 h1 {
-  color: $loopuiPrimary;
+  color: $loopui-primary;
   font-size: 96px;
   line-height: 1;
   text-transform: lowercase;
@@ -40,31 +46,31 @@ h1 {
 }
 
 h2 {
-  color: $loopuiPrimary;
+  color: $loopui-primary;
   font-size: 30px;
   text-transform: lowercase;
 }
 
 input {
   &[type="text"] {
-    background-color: transparent;
+    background-color: #fff;
     padding: 12px 16px;
-    border: 1px solid $loopuiDarkGray;
+    border: 1px solid $loopui-dark-gray;
     border-radius: 4px;
-    color: $loopuiBlack;
+    color: $loopui-black;
 
     &:focus {
-      border-color: $loopuiPrimary;
-      box-shadow: 0 0 0 1px $loopuiPrimary;
+      border-color: $loopui-primary;
+      box-shadow: 0 0 0 1px $loopui-primary;
 
       &::placeholder {
-        color: $loopuiPrimary;
+        color: $loopui-primary;
       }
     }
   }
 
   &::placeholder {
-    color: $loopuiDarkGray;
+    color: $loopui-dark-gray;
     opacity: 1;
   }
 }
@@ -94,54 +100,65 @@ input {
 }
 
 .primary-button {
-  background-color: $loopuiPrimary;
+  background-color: $loopui-primary;
   color: #fff;
-  border-color: $loopuiPrimary;
+  border-color: $loopui-primary;
   box-shadow: 0 4px 20px 0 #2e5eff;
 
   &:focus {
-    background-color: $loopuiPrimaryDark;
-    border-color: $loopuiPrimaryDark;
+    background-color: $loopui-primary-dark;
+    border-color: $loopui-primary-dark;
   }
 
   &:active {
-    background-color: $loopuiPrimaryDark !important;
-    border-color: $loopuiPrimaryDark !important;
+    background-color: $loopui-primary-dark !important;
+    border-color: $loopui-primary-dark !important;
   }
 
   &:hover {
-    background-color: $loopuiPrimaryLight;
-    border-color: $loopuiPrimaryLight;
+    background-color: $loopui-primary-light;
+    border-color: $loopui-primary-light;
   }
 }
 
 .secondary-button {
   background-color: transparent;
-  color: $loopuiPrimary;
-  border-color: $loopuiPrimary;
+  color: $loopui-primary;
+  border-color: $loopui-primary;
 
   &:focus {
-    color: $loopuiPrimaryDark;
-    border-color: $loopuiPrimaryDark;
+    color: $loopui-primary-dark;
+    border-color: $loopui-primary-dark;
   }
 
   &:active {
-    color: $loopuiPrimaryDark !important;
-    border-color: $loopuiPrimaryDark !important;
+    color: $loopui-primary-dark !important;
+    border-color: $loopui-primary-dark !important;
   }
 
   &:hover {
-    color: $loopuiPrimaryLight;
-    border-color: $loopuiPrimaryLight;
+    color: $loopui-primary-light;
+    border-color: $loopui-primary-light;
   }
 }
 
 nav {
   margin-top: 80px;
+  @media (max-width: $break-phone) {
+    margin-top: 40px;
+  }
 
   .logo-wrapper {
+    @media (max-width: $break-phone) {
+      margin-bottom: 40px;
+    }
+
     .logo {
       height: 28px;
+
+      @media (max-width: $break-phone) {
+        height: 36px;
+      }
     }
   }
 
@@ -152,10 +169,18 @@ nav {
     height: 80px;
     width: 100%;
 
+    @media (max-width: $break-phone) {
+      flex-direction: column;
+    }
+
     .nav-items-wrapper {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
+      @media (max-width: $break-phone) {
+        justify-content: center;
+      }
 
       * {
         margin: 0 12px;
@@ -166,7 +191,12 @@ nav {
 
 .max-width {
   max-width: 1200px;
-  margin: 0 160px;
+  margin: 0 auto;
+  width: 75%;
+
+  @media (max-width: $break-tablet) {
+    width: 80%;
+  }
 }
 
 .page-header {
@@ -176,34 +206,84 @@ nav {
   padding: 40px 0 96px 0;
   margin: 40px 128px 96px 0;
 
-  .content{
+  @media (max-width: $break-desktop) {
+    margin-right: 0;
+    background-position: center;
+  }
+
+  @media (max-width: $break-tablet) {
+    background-size: 70%;
+  }
+
+  @media (max-width: $break-phone) {
+    background-size: 90%;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+
+  .content {
     display: flex;
     flex-direction: column;
-    .title{
+    .title {
       width: 50%;
+      @media (max-width: $break-tablet) {
+        width: 100%;
+      }
     }
     .form {
       margin-top: 80px;
-      input {
-        margin-right: 16px;
+      @media (max-width: $break-phone) {
+        margin-top: 40px;
+      }
+      form {
+        display: flex;
+        @media (max-width: $break-phone) {
+          flex-direction: column;
+          align-items: center;
+
+          .input-textbox {
+            width: 80%;
+          }
+        }
+        input {
+          margin-right: 16px;
+          @media (max-width: $break-phone) {
+            margin: 8px 0;
+          }
+        }
       }
     }
   }
 }
 
 .feature-section {
-  background-color: $loopuiLightGray;
+  background-color: $loopui-light-gray;
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 128px 0;
 
+  @media (max-width: $break-phone) {
+    padding: 80px 0 512px;
+  }
+
   .content {
     display: flex;
     flex-direction: row;
 
+    @media (max-width: $break-phone) {
+      flex-direction: column;
+    }
+
     h2 {
       width: 320px;
+      z-index: 20;
+      @media (max-width: $break-phone) {
+        width: 100%;
+        text-align: center;
+        background-color: $loopui-light-gray;
+        margin-bottom: 80px;
+      }
     }
 
     .feature-image-container {
@@ -211,17 +291,30 @@ nav {
       align-items: center;
       justify-content: center;
       position: absolute;
+
+      @media (max-width: $break-phone) {
+        position: initial;
+      }
     }
 
     &:nth-child(1) {
       .feature-image-container {
         right: 0;
         top: 0;
-        background-color: $loopuiPrimary;
+        background-color: $loopui-primary;
         width: 500px;
         height: 500px;
         z-index: 10;
         mix-blend-mode: multiply;
+
+        @media (max-width: $break-phone) {
+          width: 400px;
+          height: 400px;
+        }
+
+        @media (max-width: $break-phone) {
+          width: 100%;
+        }
 
         .feature-image {
           width: 80%;
@@ -234,8 +327,13 @@ nav {
       flex-direction: row-reverse;
       margin-top: 320px;
 
+      @media (max-width: $break-phone) {
+        margin-top: 80px;
+        flex-direction: column;
+      }
+
       .feature-image-container {
-        background-color: #fff;
+        background-color: $loopui-pink;
         width: 500px;
         height: 250px;
         right: auto;
@@ -243,6 +341,16 @@ nav {
         left: 192px;
         bottom: 0;
         z-index: 0;
+
+        @media (max-width: $break-tablet) {
+          z-index: 10;
+          left: 0;
+          mix-blend-mode: hard-light;
+        }
+        @media (max-width: $break-phone) {
+          width: 100%;
+          mix-blend-mode: initial;
+        }
       }
     }
   }
@@ -258,8 +366,29 @@ nav {
     left: 0;
     right: 0;
 
+    @media (max-width: $break-desktop) {
+      right: 160px;
+    }
+
+    @media (max-width: $break-tablet) {
+      left: 48px;
+      right: initial;
+    }
+
     .full-container-image {
-      height: 960px;
+      height: 90%;
+
+      @media (max-width: $break-desktop) {
+        height: 660px;
+      }
+
+      @media (max-width: $break-tablet) {
+        height: 600px;
+      }
+      @media (max-width: $break-phone) {
+        max-height: 500px;
+        height: auto;
+      }
     }
   }
 }
@@ -272,10 +401,29 @@ nav {
   margin: 128px 0;
   text-align: center;
 
+  @media (max-width: $break-phone) {
+    margin: 128px 0 80px;
+  }
+
   .form {
     margin-top: 40px;
-    input {
-      margin-right: 16px;
+    form {
+      display: flex;
+      justify-content: center;
+      @media (max-width: $break-phone) {
+        flex-direction: column;
+        align-items: center;
+
+        .input-textbox {
+          width: 80%;
+        }
+      }
+      input {
+        margin-right: 16px;
+        @media (max-width: $break-phone) {
+          margin: 8px 0;
+        }
+      }
     }
   }
 }
