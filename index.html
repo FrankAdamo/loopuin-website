@@ -15,7 +15,12 @@
 
         gtag('config', 'UA-150084735-1');
     </script>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("subscribe-form-1", "subscribe-form-2").submit();
+        }
+    </script>
 </head>
 
 <body>
@@ -49,9 +54,9 @@
                         Say hello to your users.
                     </h1>
                     <div class="form">
-                        <form>
+                        <form id="subscribe-form-1">
                             <input class="input-textbox" type="text" name="email" placeholder="Email">
-                            <input class="button primary-button" type="submit" value="submit">
+                            <input class="button primary-button g-recaptcha" data-sitekey="6LcJv8IUAAAAAGwTas0JBwob7Kug-lF6yAZwze3o" data-callback='onSubmit' type="submit" value="submit">
                         </form>
                     </div>
                 </div>
@@ -90,9 +95,9 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                 </h2>
                 <div class="form">
-                    <form>
+                    <form id="subscribe-form-2">
                         <input class="input-textbox" type="text" name="email" placeholder="Email">
-                        <input class="button primary-button" type="submit" value="submit">
+                        <input class="button primary-button g-recaptcha" data-sitekey="6LcJv8IUAAAAAGwTas0JBwob7Kug-lF6yAZwze3o" data-callback='onSubmit' type="submit" value="submit">
                     </form>
                 </div>
             </div>
