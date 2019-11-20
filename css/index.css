@@ -61,7 +61,7 @@ input::placeholder {
 
 input.variant-1 {
   background-color: transparent;
-  border: 1px solid #3e3f8b; }
+  border: 1px solid #798bff; }
   input.variant-1::-moz-placeholder {
     color: #3e3f8b;
     opacity: 1; }
@@ -98,7 +98,7 @@ textarea {
     opacity: 1; }
   textarea.variant-1 {
     background-color: transparent;
-    border: 1px solid #3e3f8b; }
+    border: 1px solid #798bff; }
     textarea.variant-1::-moz-placeholder {
       color: #3e3f8b;
       opacity: 1; }
@@ -139,6 +139,10 @@ textarea {
   white-space: nowrap;
   transition: all 150ms ease-out; }
 
+.text-button {
+  padding: 0;
+  margin: 0; }
+
 .primary-button {
   background-color: #2e5eff;
   color: #fff;
@@ -176,6 +180,15 @@ textarea {
 
 .text-gray {
   color: #96a5b2; }
+
+.text-align-right {
+  text-align: right !important; }
+
+.text-align-center {
+  text-align: center !important; }
+
+.text-align-left {
+  text-align: left !important; }
 
 nav {
   margin-top: 80px; }
@@ -215,7 +228,8 @@ nav {
       .nav-wrapper .nav-items-wrapper {
         -ms-flex-pack: center;
             justify-content: center; } }
-    .nav-wrapper .nav-items-wrapper * {
+    .nav-wrapper .nav-items-wrapper button,
+    .nav-wrapper .nav-items-wrapper span {
       margin: 0 12px; }
 
 .full-logo {
@@ -253,8 +267,7 @@ nav {
     -ms-flex-direction: column;
         flex-direction: column; }
     .page-header .content .title {
-      width: 50%;
-      margin-bottom: 32px; }
+      width: 50%; }
       @media (max-width: 1024px) {
         .page-header .content .title {
           width: 100%; } }
@@ -437,15 +450,78 @@ nav {
 
 .footer {
   background-color: #02195d;
-  padding: 48px 0; }
-  .footer .contact-form-wrapper {
-    width: 50%; }
-    .footer .contact-form-wrapper h3 {
-      margin-bottom: 48px; }
-    .footer .contact-form-wrapper #contact-form {
-      display: -ms-flexbox;
-      display: flex;
+  padding: 48px 0 64px;
+  position: relative; }
+  .footer .footer-wrapper {
+    display: -ms-flexbox;
+    display: flex; }
+  .footer .contact-form-container {
+    width: 60%; }
+    .footer .contact-form-container .contact-form-wrapper {
+      width: 60%; }
+      .footer .contact-form-container .contact-form-wrapper h3 {
+        margin-bottom: 48px; }
+      .footer .contact-form-container .contact-form-wrapper #contact-form {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+        .footer .contact-form-container .contact-form-wrapper #contact-form input,
+        .footer .contact-form-container .contact-form-wrapper #contact-form textarea {
+          margin-bottom: 16px; }
+  .footer .nav-wrapper {
+    width: 40%;
+    height: 480px;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+    .footer .nav-wrapper .full-logo {
+      width: 150px; }
+    .footer .nav-wrapper .nav-items-wrapper {
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
       -ms-flex-direction: column;
           flex-direction: column; }
-      .footer .contact-form-wrapper #contact-form input, .footer .contact-form-wrapper #contact-form textarea {
-        margin-bottom: 16px; }
+      .footer .nav-wrapper .nav-items-wrapper .contact-info {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        margin: 32px 0; }
+        .footer .nav-wrapper .nav-items-wrapper .contact-info span {
+          margin: 8px 0; }
+        .footer .nav-wrapper .nav-items-wrapper .contact-info .social-media-icon {
+          max-height: 28px; }
+      .footer .nav-wrapper .nav-items-wrapper .button,
+      .footer .nav-wrapper .nav-items-wrapper span {
+        margin: 8px 0; }
+  .footer .back-to-top {
+    background-color: #fbd800;
+    width: 72px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    .footer .back-to-top .arrow-up {
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid #02195d; }
+    .footer .back-to-top .arrow-stem {
+      border: #02195d 1px solid;
+      height: 96px;
+      margin: 0 0 72px; }
