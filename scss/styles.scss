@@ -52,12 +52,11 @@ h1 {
 h2 {
   color: $loopui-primary;
   font-size: 32px;
-  text-transform: lowercase;
 }
 
 h3 {
   font-size: 56px;
-  font-weight: 300;
+  font-weight: 900;
 }
 
 label {
@@ -537,6 +536,8 @@ nav {
     width: 60%;
 
     .contact-form-wrapper {
+      display: flex;
+      flex-direction: column;
       width: 60%;
       h3 {
         margin-bottom: 48px;
