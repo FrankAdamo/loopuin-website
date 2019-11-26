@@ -1,12 +1,14 @@
 @import "./../css/normalize.css";
 
 $loopui-primary: #2e5eff;
-$loopui-primary-dark: #0035cb;
-$loopui-primary-light: #798bff;
+$loopui-primary-700: #0035cb;
+$loopui-primary-200: #798bff;
+$loopui-primary-100: #c3c7fe;
 
 $loopui-secondary: #02195d;
-$loopui-secondary-dark: #000033;
-$loopui-secondary-light: #3e3f8b;
+$loopui-secondary-900: #000033;
+$loopui-secondary-400: #3e3f8b;
+$loopui-secondary-300: #6568a8;
 
 $loopui-pink: #ff6867;
 $loopui-pink-dark: #ff3a3d;
@@ -90,10 +92,10 @@ input {
 
   &.variant-1 {
     background-color: transparent;
-    border: 1px solid $loopui-primary-light;
+    border: 1px solid $loopui-primary-200;
 
     &::placeholder {
-      color: $loopui-secondary-light;
+      color: $loopui-secondary-400;
       opacity: 1;
     }
   }
@@ -122,10 +124,10 @@ textarea {
 
   &.variant-1 {
     background-color: transparent;
-    border: 1px solid $loopui-primary-light;
+    border: 1px solid $loopui-primary-200;
 
     &::placeholder {
-      color: $loopui-secondary-light;
+      color: $loopui-secondary-400;
       opacity: 1;
     }
   }
@@ -167,18 +169,18 @@ textarea {
   box-shadow: 0 4px 20px 0 #2e5eff;
 
   &:focus {
-    background-color: $loopui-primary-dark;
-    border-color: $loopui-primary-dark;
+    background-color: $loopui-primary-700;
+    border-color: $loopui-primary-700;
   }
 
   &:active {
-    background-color: $loopui-primary-dark !important;
-    border-color: $loopui-primary-dark !important;
+    background-color: $loopui-primary-700 !important;
+    border-color: $loopui-primary-700 !important;
   }
 
   &:hover {
-    background-color: $loopui-primary-light;
-    border-color: $loopui-primary-light;
+    background-color: $loopui-primary-200;
+    border-color: $loopui-primary-200;
   }
 }
 
@@ -188,18 +190,18 @@ textarea {
   border-color: $loopui-primary;
 
   &:focus {
-    color: $loopui-primary-dark;
-    border-color: $loopui-primary-dark;
+    color: $loopui-primary-700;
+    border-color: $loopui-primary-700;
   }
 
   &:active {
-    color: $loopui-primary-dark !important;
-    border-color: $loopui-primary-dark !important;
+    color: $loopui-primary-700 !important;
+    border-color: $loopui-primary-700 !important;
   }
 
   &:hover {
-    color: $loopui-primary-light;
-    border-color: $loopui-primary-light;
+    color: $loopui-primary-200;
+    border-color: $loopui-primary-200;
   }
 }
 
