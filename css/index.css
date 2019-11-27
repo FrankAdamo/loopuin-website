@@ -60,16 +60,28 @@ input::placeholder {
 
 input.variant-1 {
   background-color: transparent;
-  border: 1px solid #798bff; }
+  border: 1px solid #c3c7fe;
+  color: #fff; }
   input.variant-1::-moz-placeholder {
-    color: #3e3f8b;
+    color: #c3c7fe;
     opacity: 1; }
   input.variant-1:-ms-input-placeholder {
-    color: #3e3f8b;
+    color: #c3c7fe;
     opacity: 1; }
   input.variant-1::placeholder {
-    color: #3e3f8b;
+    color: #c3c7fe;
     opacity: 1; }
+  input.variant-1:hover {
+    border-color: #fff; }
+  input.variant-1:focus {
+    border-color: #fbd800;
+    box-shadow: 0 0 0 1px #fbd800; }
+    input.variant-1:focus::-moz-placeholder {
+      color: #fbd800; }
+    input.variant-1:focus:-ms-input-placeholder {
+      color: #fbd800; }
+    input.variant-1:focus::placeholder {
+      color: #fbd800; }
 
 textarea {
   background-color: #fff;
@@ -97,16 +109,28 @@ textarea {
     opacity: 1; }
   textarea.variant-1 {
     background-color: transparent;
-    border: 1px solid #798bff; }
+    border: 1px solid #c3c7fe;
+    color: #fff; }
     textarea.variant-1::-moz-placeholder {
-      color: #3e3f8b;
+      color: #c3c7fe;
       opacity: 1; }
     textarea.variant-1:-ms-input-placeholder {
-      color: #3e3f8b;
+      color: #c3c7fe;
       opacity: 1; }
     textarea.variant-1::placeholder {
-      color: #3e3f8b;
+      color: #c3c7fe;
       opacity: 1; }
+    textarea.variant-1:hover {
+      border-color: #fff; }
+    textarea.variant-1:focus {
+      border-color: #fbd800;
+      box-shadow: 0 0 0 1px #fbd800; }
+      textarea.variant-1:focus::-moz-placeholder {
+        color: #fbd800; }
+      textarea.variant-1:focus:-ms-input-placeholder {
+        color: #fbd800; }
+      textarea.variant-1:focus::placeholder {
+        color: #fbd800; }
 
 .button {
   -webkit-appearance: none !important;
@@ -157,17 +181,40 @@ textarea {
     background-color: #798bff;
     border-color: #798bff; }
 
+.primary-button-variant {
+  background-color: #798bff;
+  color: #fff;
+  box-shadow: none !important; }
+  .primary-button-variant:focus {
+    background-color: #0035cb; }
+  .primary-button-variant:active {
+    background-color: #0035cb !important; }
+  .primary-button-variant:hover {
+    background-color: #c3c7fe; }
+
 .secondary-button {
-  background-color: transparent;
-  color: #2e5eff;
-  border-color: #2e5eff; }
+  background-color: #e7e9ff;
+  color: #2e5eff; }
   .secondary-button:focus {
+    background-color: #798bff;
+    color: #fff; }
+  .secondary-button:active {
+    background-color: #798bff !important;
+    color: #fff !important; }
+  .secondary-button:hover {
+    background-color: #c3c7fe; }
+
+.secondary-button-variant {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff; }
+  .secondary-button-variant:focus {
     color: #0035cb;
     border-color: #0035cb; }
-  .secondary-button:active {
+  .secondary-button-variant:active {
     color: #0035cb !important;
     border-color: #0035cb !important; }
-  .secondary-button:hover {
+  .secondary-button-variant:hover {
     color: #798bff;
     border-color: #798bff; }
 
@@ -472,6 +519,11 @@ nav {
         .footer .contact-form-container .contact-form-wrapper #contact-form input,
         .footer .contact-form-container .contact-form-wrapper #contact-form textarea {
           margin-bottom: 16px; }
+        .footer .contact-form-container .contact-form-wrapper #contact-form .button-container {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: end;
+              justify-content: flex-end; }
   .footer .nav-wrapper {
     width: 40%;
     height: 480px;

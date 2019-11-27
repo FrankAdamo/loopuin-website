@@ -1,21 +1,25 @@
 @import "./../css/normalize.css";
 
 $loopui-primary: #2e5eff;
-$loopui-primary-dark: #0035cb;
-$loopui-primary-light: #798bff;
+$loopui-primary-700: #0035cb;
+$loopui-primary-200: #798bff;
+$loopui-primary-100: #c3c7fe;
+$loopui-primary-50: #e7e9ff;
 
 $loopui-secondary: #02195d;
-$loopui-secondary-dark: #000033;
-$loopui-secondary-light: #3e3f8b;
+$loopui-secondary-900: #000033;
+$loopui-secondary-400: #3e3f8b;
+$loopui-secondary-300: #6568a8;
 
 $loopui-pink: #ff6867;
-$loopui-pink-dark: #ff3a3d;
-$loopui-pink-light: #ff9492;
+$loopui-pink-400: #ff3a3d;
+$loopui-pink-200: #ff9492;
 
 $loopui-yellow: #fbd800;
-$loopui-yellow-dark: #fbc100;
-$loopui-yellow-light: #f6e800;
+$loopui-yellow-700: #fbc100;
+$loopui-yellow-500: #f6e800;
 
+$surface: #fff;
 $loopui-black: $loopui-secondary;
 $loopui-dark-gray: #96a5b2;
 $loopui-medium-gray: #cbd6e1;
@@ -33,7 +37,7 @@ $break-phone: 768px;
 
 html {
   body {
-    background-color: #fff;
+    background-color: $surface;
     font-family: "proxima-nova", Arial, Helvetica, sans-serif;
     color: $loopui-black;
     font-size: 16px;
@@ -67,7 +71,7 @@ label {
 
 input {
   &[type="text"] {
-    background-color: #fff;
+    background-color: $surface;
     padding: 12px 16px;
     border: 1px solid $loopui-dark-gray;
     border-radius: 4px;
@@ -90,17 +94,31 @@ input {
 
   &.variant-1 {
     background-color: transparent;
-    border: 1px solid $loopui-primary-light;
+    border: 1px solid $loopui-primary-100;
+    color: #fff;
 
     &::placeholder {
-      color: $loopui-secondary-light;
+      color: $loopui-primary-100;
       opacity: 1;
+    }
+
+    &:hover {
+      border-color: #fff;
+    }
+
+    &:focus {
+      border-color: $loopui-yellow;
+      box-shadow: 0 0 0 1px $loopui-yellow;
+
+      &::placeholder {
+        color: $loopui-yellow;
+      }
     }
   }
 }
 
 textarea {
-  background-color: #fff;
+  background-color: $surface;
   padding: 12px 16px;
   border: 1px solid $loopui-dark-gray;
   border-radius: 4px;
@@ -122,11 +140,25 @@ textarea {
 
   &.variant-1 {
     background-color: transparent;
-    border: 1px solid $loopui-primary-light;
+    border: 1px solid $loopui-primary-100;
+    color: #fff;
 
     &::placeholder {
-      color: $loopui-secondary-light;
+      color: $loopui-primary-100;
       opacity: 1;
+    }
+
+    &:hover {
+      border-color: #fff;
+    }
+
+    &:focus {
+      border-color: $loopui-yellow;
+      box-shadow: 0 0 0 1px $loopui-yellow;
+
+      &::placeholder {
+        color: $loopui-yellow;
+      }
     }
   }
 }
@@ -167,39 +199,76 @@ textarea {
   box-shadow: 0 4px 20px 0 #2e5eff;
 
   &:focus {
-    background-color: $loopui-primary-dark;
-    border-color: $loopui-primary-dark;
+    background-color: $loopui-primary-700;
+    border-color: $loopui-primary-700;
   }
 
   &:active {
-    background-color: $loopui-primary-dark !important;
-    border-color: $loopui-primary-dark !important;
+    background-color: $loopui-primary-700 !important;
+    border-color: $loopui-primary-700 !important;
   }
 
   &:hover {
-    background-color: $loopui-primary-light;
-    border-color: $loopui-primary-light;
+    background-color: $loopui-primary-200;
+    border-color: $loopui-primary-200;
+  }
+}
+
+.primary-button-variant {
+  background-color: $loopui-primary-200;
+  color: #fff;
+  box-shadow: none !important;
+
+  &:focus {
+    background-color: $loopui-primary-700;
+  }
+
+  &:active {
+    background-color: $loopui-primary-700 !important;
+  }
+
+  &:hover {
+    background-color: $loopui-primary-100;
   }
 }
 
 .secondary-button {
-  background-color: transparent;
+  background-color: $loopui-primary-50;
   color: $loopui-primary;
-  border-color: $loopui-primary;
 
   &:focus {
-    color: $loopui-primary-dark;
-    border-color: $loopui-primary-dark;
+    background-color: $loopui-primary-200;
+    color: #fff;
   }
 
   &:active {
-    color: $loopui-primary-dark !important;
-    border-color: $loopui-primary-dark !important;
+    background-color: $loopui-primary-200 !important;
+    color: #fff !important;
   }
 
   &:hover {
-    color: $loopui-primary-light;
-    border-color: $loopui-primary-light;
+    background-color: $loopui-primary-100;
+  }
+}
+
+.secondary-button-variant {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+
+  &:focus {
+    color: $loopui-primary-700;
+    border-color: $loopui-primary-700;
+  }
+
+  &:active {
+    color: $loopui-primary-700 !important;
+    border-color: $loopui-primary-700 !important;
+  }
+
+  &:hover {
+    color: $loopui-primary-200;
+    border-color: $loopui-primary-200;
   }
 }
 
@@ -551,6 +620,11 @@ nav {
         textarea {
           margin-bottom: 16px;
         }
+
+        .button-container {
+          display: flex;
+          justify-content: flex-end;
+        }
       }
     }
   }
@@ -570,15 +644,15 @@ nav {
       align-items: flex-start;
       flex-direction: column;
 
-      .contact-info{
+      .contact-info {
         display: flex;
         flex-direction: column;
         margin: 32px 0;
-        span{
+        span {
           margin: 8px 0;
         }
 
-        .social-media-icon{
+        .social-media-icon {
           max-height: 28px;
         }
       }
@@ -603,18 +677,18 @@ nav {
     flex-direction: column;
 
     .arrow-up {
-      width: 0; 
-      height: 0; 
+      width: 0;
+      height: 0;
       border-left: 8px solid transparent;
       border-right: 8px solid transparent;
-      
+
       border-bottom: 8px solid $loopui-black;
     }
 
-    .arrow-stem{
+    .arrow-stem {
       border: $loopui-black 1px solid;
       height: 96px;
-      margin: 0 0 72px ;
+      margin: 0 0 72px;
     }
   }
 }
