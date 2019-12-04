@@ -272,6 +272,17 @@ textarea {
   }
 }
 
+.divider{
+  &.vertical{
+    margin: 0 16px;
+    border-right: 1px solid $loopui-medium-gray;
+  }
+  &.horizontal{
+    margin: 16px 0;
+    border-bottom: 1px solid $loopui-medium-gray;
+  }
+}
+
 .text-white {
   color: #fff;
 }
@@ -359,11 +370,11 @@ nav {
 }
 
 .page-header {
-  background-position: right;
-  background-size: contain;
+  background-position: 90% 15%;
+  background-size: 53%;
   background-repeat: no-repeat;
   padding: 40px 0 96px 0;
-  margin: 40px 128px 96px 0;
+  margin: 40px 0;
 
   @media (max-width: $break-desktop) {
     margin-right: 0;
@@ -390,17 +401,34 @@ nav {
       }
     }
 
-    .description {
-      color: $loopui-dark-gray;
+    p{
+      max-width: 464px;
+      margin-top: 48px;
+
+      @media (max-width: $break-phone) {
+        text-align: center;
+        max-width: initial;
+        margin: 48px auto 0;
+      }
     }
 
     .form {
+      max-width: 600px;
       margin-top: 80px;
+      background-color: #fff;
+      padding: 24px;
+      box-shadow: 0 12px 20px rgba(218, 235, 249, 0.75);
+      border-radius: 8px;
+
       @media (max-width: $break-phone) {
+        width: 70%;
         margin-top: 40px;
+        align-self: center;
       }
+
       form {
         display: flex;
+
         @media (max-width: $break-phone) {
           flex-direction: column;
           align-items: center;
@@ -408,11 +436,34 @@ nav {
           .input-textbox {
             width: 80%;
           }
+
+          .divider{
+            display: none;
+          }
         }
+
         input {
-          margin-right: 16px;
           @media (max-width: $break-phone) {
             margin: 8px 0;
+          }
+
+          &[type="text"]{
+            border-color: transparent;
+
+            &:focus{
+              border-color: transparent; 
+              box-shadow: none;
+            }
+
+            @media (max-width: $break-phone) {
+              &::placeholder{
+                text-align: center;
+              }
+            }
+          }
+
+          &.button{
+            margin-left: 16px;
           }
         }
       }
