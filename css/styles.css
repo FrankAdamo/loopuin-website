@@ -419,19 +419,28 @@ nav {
 
 .full-width-callout {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
-  margin: 128px 0;
-  text-align: center; }
+  margin: 128px 0; }
   @media (max-width: 768px) {
     .full-width-callout {
       margin: 128px 0 80px; } }
+  .full-width-callout .full-width-callout-wrapper {
+    background-color: #2e5eff;
+    padding: 48px;
+    width: 60%;
+    box-shadow: 0 12px 20px rgba(218, 235, 249, 0.75); }
+    .full-width-callout .full-width-callout-wrapper h2 {
+      margin-bottom: 32px; }
+      .full-width-callout .full-width-callout-wrapper h2 span {
+        font-weight: 300;
+        font-size: 36px; }
   .full-width-callout .form {
     margin-top: 40px; }
     .full-width-callout .form form {
       display: flex;
-      justify-content: center; }
+      justify-content: flex-start; }
       @media (max-width: 768px) {
         .full-width-callout .form form {
           flex-direction: column;

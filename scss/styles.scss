@@ -25,6 +25,8 @@ $loopui-dark-gray: #96a5b2;
 $loopui-medium-gray: #cbd6e1;
 $loopui-light-gray: #ecf5fc;
 
+$loopui-card-shadow: 0 12px 20px rgba(218, 235, 249, 0.75);
+
 /* Responsive Breakpoints */
 
 $break-desktop: 1300px;
@@ -196,7 +198,7 @@ textarea {
   background-color: $loopui-primary;
   color: #fff;
   border-color: $loopui-primary;
-  box-shadow: 0 4px 20px 0 #2e5eff;
+  box-shadow: 0 4px 20px 0 $loopui-primary;
 
   &:focus {
     background-color: $loopui-primary-700;
@@ -272,12 +274,12 @@ textarea {
   }
 }
 
-.divider{
-  &.vertical{
+.divider {
+  &.vertical {
     margin: 0 16px;
     border-right: 1px solid $loopui-medium-gray;
   }
-  &.horizontal{
+  &.horizontal {
     margin: 16px 0;
     border-bottom: 1px solid $loopui-medium-gray;
   }
@@ -401,7 +403,7 @@ nav {
       }
     }
 
-    p{
+    p {
       max-width: 464px;
       margin-top: 48px;
 
@@ -417,7 +419,7 @@ nav {
       margin-top: 80px;
       background-color: #fff;
       padding: 24px;
-      box-shadow: 0 12px 20px rgba(218, 235, 249, 0.75);
+      box-shadow: $loopui-card-shadow;
       border-radius: 8px;
 
       @media (max-width: $break-phone) {
@@ -437,7 +439,7 @@ nav {
             width: 80%;
           }
 
-          .divider{
+          .divider {
             display: none;
           }
         }
@@ -447,22 +449,22 @@ nav {
             margin: 8px 0;
           }
 
-          &[type="text"]{
+          &[type="text"] {
             border-color: transparent;
 
-            &:focus{
-              border-color: transparent; 
+            &:focus {
+              border-color: transparent;
               box-shadow: none;
             }
 
             @media (max-width: $break-phone) {
-              &::placeholder{
+              &::placeholder {
                 text-align: center;
               }
             }
           }
 
-          &.button{
+          &.button {
             margin-left: 16px;
           }
         }
@@ -610,21 +612,36 @@ nav {
 
 .full-width-callout {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
   margin: 128px 0;
-  text-align: center;
 
   @media (max-width: $break-phone) {
     margin: 128px 0 80px;
+  }
+
+  .full-width-callout-wrapper {
+    background-color: $loopui-primary;
+    padding: 48px;
+    width: 60%;
+    box-shadow: $loopui-card-shadow;
+
+    h2 {
+      margin-bottom: 32px;
+
+      span {
+        font-weight: 300;
+        font-size: 36px;
+      }
+    }
   }
 
   .form {
     margin-top: 40px;
     form {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       @media (max-width: $break-phone) {
         flex-direction: column;
         align-items: center;
