@@ -627,6 +627,10 @@ nav {
     width: 60%;
     box-shadow: $loopui-card-shadow;
 
+    @media (max-width: $break-tablet) {
+      width: initial;
+    }
+
     h2 {
       margin-bottom: 32px;
 
