@@ -513,6 +513,9 @@ nav {
     padding: 48px;
     width: 60%;
     box-shadow: 0 12px 20px rgba(218, 235, 249, 0.75); }
+    @media (max-width: 1024px) {
+      .full-width-callout .full-width-callout-wrapper {
+        width: initial; } }
     .full-width-callout .full-width-callout-wrapper h2 {
       margin-bottom: 32px; }
       .full-width-callout .full-width-callout-wrapper h2 span {
