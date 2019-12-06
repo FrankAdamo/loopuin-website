@@ -218,6 +218,14 @@ textarea {
     color: #798bff;
     border-color: #798bff; }
 
+.divider.vertical {
+  margin: 0 16px;
+  border-right: 1px solid #cbd6e1; }
+
+.divider.horizontal {
+  margin: 16px 0;
+  border-bottom: 1px solid #cbd6e1; }
+
 .text-white {
   color: #fff; }
 
@@ -290,11 +298,11 @@ nav {
       width: 80%; } }
 
 .page-header {
-  background-position: right;
-  background-size: contain;
+  background-position: 90% 15%;
+  background-size: 53%;
   background-repeat: no-repeat;
   padding: 40px 0 96px 0;
-  margin: 40px 128px 96px 0; }
+  margin: 40px 0; }
   @media (max-width: 1300px) {
     .page-header {
       margin-right: 0;
@@ -317,13 +325,27 @@ nav {
       @media (max-width: 1024px) {
         .page-header .content .title {
           width: 100%; } }
-    .page-header .content .description {
-      color: #96a5b2; }
+    .page-header .content p {
+      max-width: 464px;
+      margin-top: 48px; }
+      @media (max-width: 768px) {
+        .page-header .content p {
+          text-align: center;
+          max-width: initial;
+          margin: 48px auto 0; } }
     .page-header .content .form {
-      margin-top: 80px; }
+      max-width: 600px;
+      margin-top: 80px;
+      background-color: #fff;
+      padding: 24px;
+      box-shadow: 0 12px 20px rgba(218, 235, 249, 0.75);
+      border-radius: 8px; }
       @media (max-width: 768px) {
         .page-header .content .form {
-          margin-top: 40px; } }
+          width: 70%;
+          margin-top: 40px;
+          -ms-flex-item-align: center;
+              align-self: center; } }
       .page-header .content .form form {
         display: -ms-flexbox;
         display: flex; }
@@ -334,12 +356,26 @@ nav {
             -ms-flex-align: center;
                 align-items: center; }
             .page-header .content .form form .input-textbox {
-              width: 80%; } }
-        .page-header .content .form form input {
-          margin-right: 16px; }
+              width: 80%; }
+            .page-header .content .form form .divider {
+              display: none; } }
+        @media (max-width: 768px) {
+          .page-header .content .form form input {
+            margin: 8px 0; } }
+        .page-header .content .form form input[type="text"] {
+          border-color: transparent; }
+          .page-header .content .form form input[type="text"]:focus {
+            border-color: transparent;
+            box-shadow: none; }
           @media (max-width: 768px) {
-            .page-header .content .form form input {
-              margin: 8px 0; } }
+            .page-header .content .form form input[type="text"]::-moz-placeholder {
+              text-align: center; }
+            .page-header .content .form form input[type="text"]:-ms-input-placeholder {
+              text-align: center; }
+            .page-header .content .form form input[type="text"]::placeholder {
+              text-align: center; } }
+        .page-header .content .form form input.button {
+          margin-left: 16px; }
 
 .feature-section {
   background-color: #ecf5fc;
@@ -462,24 +498,33 @@ nav {
 .full-width-callout {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-align: start;
+      align-items: flex-start;
   -ms-flex-direction: column;
       flex-direction: column;
-  margin: 128px 0;
-  text-align: center; }
+  margin: 128px 0; }
   @media (max-width: 768px) {
     .full-width-callout {
       margin: 128px 0 80px; } }
+  .full-width-callout .full-width-callout-wrapper {
+    background-color: #2e5eff;
+    padding: 48px;
+    width: 60%;
+    box-shadow: 0 12px 20px rgba(218, 235, 249, 0.75); }
+    .full-width-callout .full-width-callout-wrapper h2 {
+      margin-bottom: 32px; }
+      .full-width-callout .full-width-callout-wrapper h2 span {
+        font-weight: 300;
+        font-size: 36px; }
   .full-width-callout .form {
     margin-top: 40px; }
     .full-width-callout .form form {
       display: -ms-flexbox;
       display: flex;
-      -ms-flex-pack: center;
-          justify-content: center; }
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
       @media (max-width: 768px) {
         .full-width-callout .form form {
           -ms-flex-direction: column;
