@@ -95,16 +95,18 @@ textarea {
   /* Not too fond of this */
   background: none;
   border: 2px solid transparent;
-  border-radius: 50px;
+  border-radius: 8px;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1;
-  min-width: 100px;
+  line-height: 10px;
+  height: 40px;
   outline: none !important;
   /* Not too fond of this */
   padding: 12px 16px;
+  position: relative;
   text-decoration: none;
   text-transform: capitalize;
   text-overflow: ellipsis;
@@ -114,6 +116,16 @@ textarea {
   vertical-align: middle;
   white-space: nowrap;
   transition: all 150ms ease-out; }
+  .button::before {
+    content: "";
+    border-radius: 8px;
+    display: block;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: 10; }
 
 .text-button {
   padding: 0;
@@ -121,55 +133,61 @@ textarea {
 
 .primary-button {
   background-color: #2e5eff;
-  color: #fff;
-  border-color: #2e5eff;
+  border-color: transparent;
   box-shadow: 0 4px 20px 0 #2e5eff; }
-  .primary-button:focus {
-    background-color: #0035cb;
-    border-color: #0035cb; }
-  .primary-button:active {
-    background-color: #0035cb !important;
-    border-color: #0035cb !important; }
   .primary-button:hover {
-    background-color: #798bff;
-    border-color: #798bff; }
+    background-color: #2e5eff; }
+    .primary-button:hover::before {
+      background-color: rgba(194, 199, 254, 0.24); }
+    .primary-button:hover:active {
+      background-color: #2e5eff; }
+  .primary-button:focus {
+    background-color: #2e5eff; }
 
-.primary-button-variant {
+.primary-button-dark {
+  box-shadow: none !important;
   background-color: #798bff;
-  color: #fff;
-  box-shadow: none !important; }
-  .primary-button-variant:focus {
-    background-color: #0035cb; }
-  .primary-button-variant:active {
-    background-color: #0035cb !important; }
-  .primary-button-variant:hover {
-    background-color: #c3c7fe; }
+  border-color: transparent; }
+  .primary-button-dark:hover {
+    background-color: #798bff; }
+    .primary-button-dark:hover::before {
+      background-color: rgba(194, 199, 254, 0.24); }
+  .primary-button-dark:focus {
+    background-color: #798bff; }
 
 .secondary-button {
+  border-color: transparent;
+  box-shadow: none;
   background-color: #e7e9ff;
+  border-color: transparent;
   color: #2e5eff; }
-  .secondary-button:focus {
-    background-color: #798bff;
-    color: #fff; }
-  .secondary-button:active {
-    background-color: #798bff !important;
-    color: #fff !important; }
   .secondary-button:hover {
-    background-color: #c3c7fe; }
+    background-color: #e7e9ff; }
+    .secondary-button:hover::before {
+      background-color: rgba(46, 96, 255, 0.12); }
+    .secondary-button:hover:active {
+      background-color: #e7e9ff; }
+  .secondary-button:focus {
+    background-color: #e7e9ff; }
+    .secondary-button:focus::before {
+      background-color: rgba(46, 96, 255, 0.12); }
 
-.secondary-button-variant {
+.secondary-button-dark {
   background-color: transparent;
-  color: #fff;
-  border-color: #fff; }
-  .secondary-button-variant:focus {
-    color: #0035cb;
-    border-color: #0035cb; }
-  .secondary-button-variant:active {
-    color: #0035cb !important;
-    border-color: #0035cb !important; }
-  .secondary-button-variant:hover {
-    color: #798bff;
-    border-color: #798bff; }
+  box-shadow: none;
+  border-color: #e7e9ff;
+  color: #e7e9ff; }
+  .secondary-button-dark:hover {
+    background-color: rgba(194, 199, 254, 0.24);
+    border-color: #e7e9ff;
+    color: #e7e9ff; }
+    .secondary-button-dark:hover::before {
+      background-color: rgba(194, 199, 254, 0.24); }
+  .secondary-button-dark:focus {
+    border-color: #c3c7fe;
+    color: #c3c7fe; }
+    .secondary-button-dark:focus::before {
+      background-color: rgba(46, 96, 255, 0.12); }
 
 .divider.vertical {
   margin: 0 16px;
@@ -289,7 +307,8 @@ nav {
           margin-top: 40px;
           align-self: center; } }
       .page-header .content .form form {
-        display: flex; }
+        display: flex;
+        align-items: center; }
         @media (max-width: 768px) {
           .page-header .content .form form {
             flex-direction: column;
@@ -443,11 +462,11 @@ nav {
     margin-top: 40px; }
     .full-width-callout .form form {
       display: flex;
-      justify-content: flex-start; }
+      justify-content: flex-start;
+      align-items: center; }
       @media (max-width: 768px) {
         .full-width-callout .form form {
-          flex-direction: column;
-          align-items: center; }
+          flex-direction: column; }
           .full-width-callout .form form .input-textbox {
             width: 80%; } }
       .full-width-callout .form form input {
