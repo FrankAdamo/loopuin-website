@@ -1,3 +1,4 @@
+@import "../node_modules/@frankadamo/loopuin-design-system/src/components/button/mixin.scss";
 @import "./../css/normalize.css";
 
 $loopui-primary: #2e5eff;
@@ -166,27 +167,7 @@ textarea {
 }
 
 .button {
-  appearance: none !important; /* Not too fond of this */
-  background: none;
-  border: 2px solid transparent;
-  border-radius: 50px;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  min-width: 100px;
-  outline: none !important; /* Not too fond of this */
-  padding: 12px 16px;
-  text-decoration: none;
-  text-transform: capitalize;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  text-align: center;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  transition: all 150ms ease-out;
+ @include buttonBase;
 }
 
 .text-button {
@@ -195,83 +176,20 @@ textarea {
 }
 
 .primary-button {
-  background-color: $loopui-primary;
-  color: #fff;
-  border-color: $loopui-primary;
-  box-shadow: 0 4px 20px 0 $loopui-primary;
-
-  &:focus {
-    background-color: $loopui-primary-700;
-    border-color: $loopui-primary-700;
-  }
-
-  &:active {
-    background-color: $loopui-primary-700 !important;
-    border-color: $loopui-primary-700 !important;
-  }
-
-  &:hover {
-    background-color: $loopui-primary-200;
-    border-color: $loopui-primary-200;
-  }
+ @include buttonVariant();
+ box-shadow: $button-shadow;
 }
 
-.primary-button-variant {
-  background-color: $loopui-primary-200;
-  color: #fff;
-  box-shadow: none !important;
-
-  &:focus {
-    background-color: $loopui-primary-700;
-  }
-
-  &:active {
-    background-color: $loopui-primary-700 !important;
-  }
-
-  &:hover {
-    background-color: $loopui-primary-100;
-  }
+.primary-button-dark {
+  @include buttonVariant($dark: true)
 }
 
 .secondary-button {
-  background-color: $loopui-primary-50;
-  color: $loopui-primary;
-
-  &:focus {
-    background-color: $loopui-primary-200;
-    color: #fff;
-  }
-
-  &:active {
-    background-color: $loopui-primary-200 !important;
-    color: #fff !important;
-  }
-
-  &:hover {
-    background-color: $loopui-primary-100;
-  }
+  @include buttonVariant($secondary: true);
 }
 
-.secondary-button-variant {
-  background-color: transparent;
-  color: #fff;
-  border-color: #fff;
-
-  &:focus {
-    color: $loopui-primary-700;
-    border-color: $loopui-primary-700;
-  }
-
-  &:active {
-    color: $loopui-primary-700 !important;
-    border-color: $loopui-primary-700 !important;
-  }
-
-  &:hover {
-    color: $loopui-primary-200;
-    border-color: $loopui-primary-200;
-  }
+.secondary-button-dark {
+  @include buttonVariant($dark: true, $secondary: true);
 }
 
 .divider {
@@ -646,9 +564,9 @@ nav {
     form {
       display: flex;
       justify-content: flex-start;
+      align-items: center;
       @media (max-width: $break-phone) {
         flex-direction: column;
-        align-items: center;
 
         .input-textbox {
           width: 80%;
