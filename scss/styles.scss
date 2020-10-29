@@ -1,36 +1,11 @@
 @import "../node_modules/@frankadamo/loopuin-design-system/src/components/button/mixin.scss";
+@import "../node_modules/@frankadamo/loopuin-design-system/src/styles/_main.scss";
 @import "./../css/normalize.css";
-
-$loopui-primary: #2e5eff;
-$loopui-primary-700: #0035cb;
-$loopui-primary-200: #798bff;
-$loopui-primary-100: #c3c7fe;
-$loopui-primary-50: #e7e9ff;
-
-$loopui-secondary: #02195d;
-$loopui-secondary-900: #000033;
-$loopui-secondary-400: #3e3f8b;
-$loopui-secondary-300: #6568a8;
-
-$loopui-pink: #ff6867;
-$loopui-pink-400: #ff3a3d;
-$loopui-pink-200: #ff9492;
-
-$loopui-yellow: #fbd800;
-$loopui-yellow-700: #fbc100;
-$loopui-yellow-500: #f6e800;
-
-$surface: #fff;
-$loopui-black: $loopui-secondary;
-$loopui-dark-gray: #96a5b2;
-$loopui-medium-gray: #cbd6e1;
-$loopui-light-gray: #ecf5fc;
-
-$loopui-card-shadow: 0 12px 20px rgba(218, 235, 249, 0.75);
 
 /* Responsive Breakpoints */
 
-$break-desktop: 1300px;
+$break-lg-desktop: 1400px;
+$break-desktop: 1200px;
 $break-tablet: 1024px;
 $break-phone: 768px;
 
@@ -42,14 +17,14 @@ html {
   body {
     background-color: $surface;
     font-family: "proxima-nova", Arial, Helvetica, sans-serif;
-    color: $loopui-black;
-    font-size: 16px;
-    line-height: 1.2;
+    color: $lui-default-text;
+    font-size: 20px;
+    line-height: 2;
   }
 }
 
 h1 {
-  color: $loopui-primary;
+  color: $lui-primary;
   font-size: 96px;
   line-height: 1;
   text-transform: lowercase;
@@ -57,18 +32,19 @@ h1 {
 }
 
 h2 {
-  color: $loopui-primary;
   font-size: 32px;
+  line-height: 1.2;
 }
 
 h3 {
   font-size: 56px;
   font-weight: 900;
+  line-height: 1.2;
 }
 
 label {
   font-size: 14px;
-  color: $loopui-dark-gray;
+  color: $lui-high-contrast-gray;
   margin-bottom: 16px;
 }
 
@@ -76,32 +52,32 @@ input {
   &[type="text"] {
     background-color: $surface;
     padding: 12px 16px;
-    border: 1px solid $loopui-dark-gray;
+    border: 1px solid $lui-high-contrast-gray;
     border-radius: 4px;
-    color: $loopui-black;
+    color: $lui-default-text;
 
     &:focus {
-      border-color: $loopui-primary;
-      box-shadow: 0 0 0 1px $loopui-primary;
+      border-color: $lui-primary;
+      box-shadow: 0 0 0 1px $lui-primary;
 
       &::placeholder {
-        color: $loopui-primary;
+        color: $lui-primary;
       }
     }
   }
 
   &::placeholder {
-    color: $loopui-dark-gray;
+    color: $lui-high-contrast-gray;
     opacity: 1;
   }
 
   &.variant-1 {
     background-color: transparent;
-    border: 1px solid $loopui-primary-100;
+    border: 1px solid $lui-primary-100;
     color: #fff;
 
     &::placeholder {
-      color: $loopui-primary-100;
+      color: $lui-primary-100;
       opacity: 1;
     }
 
@@ -110,11 +86,11 @@ input {
     }
 
     &:focus {
-      border-color: $loopui-yellow;
-      box-shadow: 0 0 0 1px $loopui-yellow;
+      border-color: $lui-yellow;
+      box-shadow: 0 0 0 1px $lui-yellow;
 
       &::placeholder {
-        color: $loopui-yellow;
+        color: $lui-yellow;
       }
     }
   }
@@ -123,31 +99,31 @@ input {
 textarea {
   background-color: $surface;
   padding: 12px 16px;
-  border: 1px solid $loopui-dark-gray;
+  border: 1px solid $lui-high-contrast-gray;
   border-radius: 4px;
-  color: $loopui-black;
+  color: $lui-default-text;
 
   &:focus {
-    border-color: $loopui-primary;
-    box-shadow: 0 0 0 1px $loopui-primary;
+    border-color: $lui-primary;
+    box-shadow: 0 0 0 1px $lui-primary;
 
     &::placeholder {
-      color: $loopui-primary;
+      color: $lui-primary;
     }
   }
 
   &::placeholder {
-    color: $loopui-dark-gray;
+    color: $lui-high-contrast-gray;
     opacity: 1;
   }
 
   &.variant-1 {
     background-color: transparent;
-    border: 1px solid $loopui-primary-100;
+    border: 1px solid $lui-primary-100;
     color: #fff;
 
     &::placeholder {
-      color: $loopui-primary-100;
+      color: $lui-primary-100;
       opacity: 1;
     }
 
@@ -156,18 +132,19 @@ textarea {
     }
 
     &:focus {
-      border-color: $loopui-yellow;
-      box-shadow: 0 0 0 1px $loopui-yellow;
+      border-color: $lui-yellow;
+      box-shadow: 0 0 0 1px $lui-yellow;
 
       &::placeholder {
-        color: $loopui-yellow;
+        color: $lui-yellow;
       }
     }
   }
 }
 
 .button {
- @include buttonBase;
+  @include buttonBase;
+  line-height: 0;
 }
 
 .text-button {
@@ -176,30 +153,29 @@ textarea {
 }
 
 .primary-button {
- @include buttonVariant();
- box-shadow: $button-shadow;
+  @include buttonVariant($on-light: true);
 }
 
 .primary-button-dark {
-  @include buttonVariant($dark: true)
+  @include buttonVariant($on-dark: true);
 }
 
 .secondary-button {
-  @include buttonVariant($secondary: true);
+  @include buttonVariant($on-light: true, $secondary: true);
 }
 
 .secondary-button-dark {
-  @include buttonVariant($dark: true, $secondary: true);
+  @include buttonVariant($on-dark: true, $secondary: true);
 }
 
 .divider {
   &.vertical {
     margin: 0 16px;
-    border-right: 1px solid $loopui-medium-gray;
+    border-right: 1px solid $lui-medium-contrast-gray;
   }
   &.horizontal {
     margin: 16px 0;
-    border-bottom: 1px solid $loopui-medium-gray;
+    border-bottom: 1px solid $lui-medium-contrast-gray;
   }
 }
 
@@ -208,11 +184,11 @@ textarea {
 }
 
 .text-primary {
-  color: $loopui-primary;
+  color: $lui-primary;
 }
 
 .text-gray {
-  color: $loopui-dark-gray;
+  color: $lui-high-contrast-gray;
 }
 
 .text-align-right {
@@ -228,11 +204,7 @@ textarea {
 }
 
 nav {
-  margin-top: 80px;
-  @media (max-width: $break-phone) {
-    margin-top: 40px;
-  }
-
+  padding-top: 20px;
   .logo-wrapper {
     @media (max-width: $break-phone) {
       margin-bottom: 40px;
@@ -282,31 +254,25 @@ nav {
 .max-width {
   max-width: 1200px;
   margin: 0 auto;
-  width: 75%;
-
-  @media (max-width: $break-tablet) {
-    width: 80%;
-  }
+  width: 90%;
 }
 
 .page-header {
-  background-position: 90% 15%;
-  background-size: 53%;
+  background-position: 100% top;
+  background-size: 48%;
   background-repeat: no-repeat;
-  padding: 40px 0 96px 0;
-  margin: 40px 0;
+  padding-bottom: 136px;
 
   @media (max-width: $break-desktop) {
     margin-right: 0;
-    background-position: center;
+    background-size: 58%;
   }
 
   @media (max-width: $break-tablet) {
-    background-size: 70%;
+    background-image: none !important;
   }
 
   @media (max-width: $break-phone) {
-    background-size: 90%;
     padding-bottom: 40px;
     margin-bottom: 40px;
   }
@@ -314,10 +280,14 @@ nav {
   .content {
     display: flex;
     flex-direction: column;
+    margin-top: 80px;
     .title {
-      width: 50%;
+      width: 70%;
       @media (max-width: $break-tablet) {
         width: 100%;
+      }
+      @media (max-width: $break-phone) {
+        text-align: center;;
       }
     }
 
@@ -325,7 +295,7 @@ nav {
       max-width: 464px;
       margin: 48px 0 0;
 
-      @media (max-width: $break-phone) {
+      @media (max-width: $break-tablet) {
         text-align: center;
         max-width: initial;
         margin: 48px auto 0;
@@ -333,14 +303,14 @@ nav {
     }
 
     .form {
-      max-width: 652px;
+      max-width: 738px;
       margin-top: 80px;
       background-color: #fff;
       padding: 24px;
-      box-shadow: $loopui-card-shadow;
+      box-shadow: $lui-shadow;
       border-radius: 8px;
 
-      @media (max-width: $break-phone) {
+      @media (max-width: $break-tablet) {
         width: 70%;
         margin-top: 40px;
         align-self: center;
@@ -348,8 +318,9 @@ nav {
 
       form {
         display: flex;
+        align-items: center;
 
-        @media (max-width: $break-phone) {
+        @media (max-width: $break-tablet) {
           flex-direction: column;
           align-items: center;
 
@@ -363,7 +334,7 @@ nav {
         }
 
         input {
-          @media (max-width: $break-phone) {
+          @media (max-width: $break-tablet) {
             margin: 8px 0;
           }
 
@@ -375,7 +346,7 @@ nav {
               box-shadow: none;
             }
 
-            @media (max-width: $break-phone) {
+            @media (max-width: $break-tablet) {
               &::placeholder {
                 text-align: center;
               }
@@ -392,7 +363,7 @@ nav {
 }
 
 .feature-section {
-  background-color: $loopui-light-gray;
+  background-color: $lui-low-contrast-gray;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -411,12 +382,17 @@ nav {
     }
 
     h2 {
+      margin-bottom: $grid-md;
+    }
+
+    h2,
+    p {
       width: 320px;
       z-index: 20;
       @media (max-width: $break-phone) {
         width: 100%;
         text-align: center;
-        background-color: $loopui-light-gray;
+        background-color: $lui-low-contrast-gray;
         margin-bottom: 80px;
       }
     }
@@ -436,7 +412,7 @@ nav {
       .feature-image-container {
         right: 0;
         top: 0;
-        background-color: $loopui-primary;
+        background-color: $lui-primary;
         width: 500px;
         height: 500px;
         z-index: 10;
@@ -468,7 +444,7 @@ nav {
       }
 
       .feature-image-container {
-        background-color: $loopui-pink;
+        background-color: $lui-pink;
         width: 500px;
         height: 250px;
         right: auto;
@@ -501,20 +477,20 @@ nav {
     left: 0;
     right: 0;
 
-    @media (max-width: $break-desktop) {
-      right: 160px;
+    @media (max-width: $break-tablet) {
+      display: none;
     }
 
-    @media (max-width: $break-tablet) {
-      left: 48px;
-      right: initial;
+    @media (max-width: $break-phone) {
+      display: flex;
+      right: 0;
     }
 
     .full-container-image {
       height: 90%;
 
       @media (max-width: $break-desktop) {
-        height: 660px;
+        height: 700px;
       }
 
       @media (max-width: $break-tablet) {
@@ -523,6 +499,55 @@ nav {
       @media (max-width: $break-phone) {
         max-height: 500px;
         height: auto;
+      }
+    }
+  }
+}
+
+.list-container {
+  margin: 40px;
+  .max-width {
+    display: flex;
+    justify-content: center;
+    .content {
+      padding-left: 32px;
+      @media (max-width: $break-tablet) {
+        padding-left: 0;
+      }
+      h3 {
+        margin: $grid-lg $grid-md;
+        @media (max-width: $break-tablet) {
+          text-align: center;
+        }
+      }
+      .list {
+        display: flex;
+        flex-wrap: wrap;
+        @media (max-width: $break-tablet) {
+          justify-content: center;
+        }
+        li {
+          font-weight: 600;
+          width: 460px;
+          margin: $grid-md;
+          background-color: #fff;
+          padding: $grid-md;
+          box-shadow: $lui-shadow;
+          border-radius: 8px;
+
+          @media (max-width: $break-lg-desktop) {
+            width: auto;
+          }
+
+          @media (max-width: $break-tablet) {
+            width: 460px;
+          }
+
+          @media (max-width: $break-phone) {
+            width: 90%;
+            text-align: center;
+          }
+        }
       }
     }
   }
@@ -540,10 +565,10 @@ nav {
   }
 
   .full-width-callout-wrapper {
-    background-color: $loopui-primary;
+    background-color: $lui-primary;
     padding: 48px;
     width: 60%;
-    box-shadow: $loopui-card-shadow;
+    box-shadow: $lui-shadow;
 
     @media (max-width: $break-tablet) {
       width: initial;
@@ -583,7 +608,7 @@ nav {
 }
 
 .footer {
-  background-color: $loopui-secondary;
+  background-color: $lui-secondary;
   padding: 48px 0 64px;
   position: relative;
 
@@ -621,7 +646,6 @@ nav {
 
   .nav-wrapper {
     width: 40%;
-    height: 480px;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
@@ -655,7 +679,7 @@ nav {
   }
 
   .back-to-top {
-    background-color: $loopui-yellow;
+    background-color: $lui-yellow;
     width: 72px;
     position: absolute;
     right: 0;
@@ -672,11 +696,11 @@ nav {
       border-left: 8px solid transparent;
       border-right: 8px solid transparent;
 
-      border-bottom: 8px solid $loopui-black;
+      border-bottom: 8px solid $lui-default-text;
     }
 
     .arrow-stem {
-      border: $loopui-black 1px solid;
+      border: $lui-default-text 1px solid;
       height: 96px;
       margin: 0 0 72px;
     }
