@@ -584,7 +584,6 @@ nav {
           justify-content: flex-end; }
   .footer .nav-wrapper {
     width: 40%;
-    height: 480px;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start; }

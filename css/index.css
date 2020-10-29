@@ -684,7 +684,6 @@ nav {
               justify-content: flex-end; }
   .footer .nav-wrapper {
     width: 40%;
-    height: 480px;
     -ms-flex-direction: column;
         flex-direction: column;
     -ms-flex-pack: justify;
